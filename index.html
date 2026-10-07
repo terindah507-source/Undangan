@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Eva & Ega</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f3ed;
+      color: #4d4038;
+      line-height: 1.7;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(177,143,111,.18), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(177,143,111,.15), transparent 30%),
+        #f8f3ed;
+    }
+
+    .cover::before,
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(137,104,78,.25);
+      border-radius: 50%;
+    }
+
+    .cover::before {
+      top: -130px;
+      left: -130px;
+    }
+
+    .cover::after {
+      bottom: -130px;
+      right: -130px;
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 30px;
+    }
+
+    .small-title {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #92735a;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(70px, 18vw, 130px);
+      font-weight: 500;
+      line-height: .85;
+      color: #6d5140;
+    }
+
+    .ampersand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 50px;
+      color: #a58262;
+      margin: 15px 0;
+    }
+
+    .cover-date {
+      margin-top: 30px;
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: #735c4d;
+    }
+
+    .open-btn {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 30px;
+      border: 1px solid #92735a;
+      border-radius: 30px;
+      color: #6d5140;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      transition: .3s;
+    }
+
+    .open-btn:hover {
+      background: #92735a;
+      color: white;
+    }
+
+    .intro {
+      background: #fffdf9;
+    }
+
+    .ornament {
+      color: #a58262;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .quote {
+      max-width: 650px;
+      margin: auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      font-style: italic;
+      color: #665247;
+    }
+
+    .names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 55px;
+      color: #765942;
+      margin: 30px 0 10px;
+    }
+
+    .subtitle {
+      color: #92735a;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .couple {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 45px;
+    }
+
+    .person {
+      width: 280px;
+    }
+
+    .person h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      color: #765942;
+    }
+
+    .person p {
+      font-size: 13px;
+      margin-top: 8px;
+      color: #74645a;
+    }
+
+    .event {
+      background: #eee5da;
+    }
+
+    .event-card {
+      max-width: 550px;
+      margin: 35px auto 0;
+      padding: 40px 25px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(146,115,90,.25);
+      border-radius: 20px;
+    }
+
+    .event-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      color: #765942;
+      margin-bottom: 20px;
+    }
+
+    .event-date {
+      font-size: 18px;
+      font-weight: 600;
+      color: #765942;
+    }
+
+    .event-time {
+      margin-top: 8px;
+      font-size: 15px;
+    }
+
+    .location {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .countdown {
+      background: #fffdf9;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .time-box {
+      width: 90px;
+      padding: 18px 8px;
+      background: #eee5da;
+      border-radius: 12px;
+    }
+
+    .time-box span {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      color: #765942;
+    }
+
+    .time-box small {
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .closing {
+      background: #6d5140;
+      color: #f8f3ed;
+    }
+
+    .closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .closing p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 14px;
+      color: #eee5da;
+    }
+
+    footer {
+      padding: 25px;
+      background: #574033;
+      text-align: center;
+      color: #d9c8b8;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 65px 18px;
+      }
+
+      .names {
+        font-size: 45px;
+      }
+
+      .quote {
+        font-size: 22px;
+      }
+
+      .person {
+        width: 100%;
+      }
+
+      .time-box {
+        width: 75px;
+      }
+
+      .time-box span {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-content">
+      <div class="small-title">The Wedding Of</div>
+
+      <h1>Eva</h1>
+      <div class="ampersand">&amp;</div>
+      <h1>Ega</h1>
+
+      <div class="cover-date">
+        04 • 12 • 2026
+      </div>
+
+      <a href="#undangan" class="open-btn">
+        BUKA UNDANGAN
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro" id="undangan">
+    <div class="ornament">✦</div>
+
+    <p class="quote">
+      "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan
+      pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa
+      tenteram kepadanya."
+    </p>
+
+    <div class="names">Eva &amp; Ega</div>
+
+    <p class="subtitle">
+      Dengan penuh kebahagiaan kami mengundang Bapak/Ibu/Saudara/i
+      untuk hadir dalam acara pernikahan kami.
+    </p>
+
+    <div class="couple">
+      <div class="person">
+        <h3>Eva</h3>
+        <p>
+          Putri dari<br>
+          Bapak Mardiono<br>
+          &amp; Ibu Siti Masruroh
+        </p>
+      </div>
+
+      <div class="person">
+        <h3>Ega</h3>
+        <p>
+          Putra dari<br>
+          Bapak Harjono<br>
+          &amp; Ibu Rahayuningsih
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT -->
+  <section class="event">
+    <div class="ornament">❦</div>
+
+    <h2 class="names">Akad Nikah</h2>
+
+    <div class="event-card">
+      <h3>Jumat</h3>
+
+      <div class="event-date">
+        4 Desember 2026
+      </div>
+
+      <div class="event-time">
+        Pukul 08.30 WIB
+      </div>
+
+      <div class="location">
+        <strong>Kediaman Mempelai Wanita</strong><br>
+        Kandangan, Kediri
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+    <div class="ornament">♡</div>
+
+    <h2 class="names">Menuju Hari Bahagia</h2>
+
+    <div class="timer">
+      <div class="time-box">
+        <span id="days">0</span>
+        <small>Hari</small>
+      </div>
+
+      <div class="time-box">
+        <span id="hours">0</span>
+        <small>Jam</small>
+      </div>
+
+      <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Menit</small>
+      </div>
+
+      <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Detik</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <h2>Terima Kasih</h2>
+
+    <p>
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami
+      apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan
+      doa restu kepada kami.
+    </p>
+
+    <br>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:32px;">
+      Eva &amp; Ega
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Eva &amp; Ega • Wedding Invitation
+  </footer>
+
+  <script>
+    const weddingDate =
+      new Date("December 4, 2026 08:30:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        return;
+      }
+
+      const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+      const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+      );
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+  </html>
+  
